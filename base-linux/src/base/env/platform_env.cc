@@ -50,6 +50,13 @@ Platform_env_base::Rm_session_mmap::_dataspace_writable(Dataspace_capability ds)
 }
 
 
+void
+Platform_env_base::Rm_session_mmap::_release_dataspace(Dataspace_capability ds)
+{
+	lx_close(_dataspace_fd(ds));
+}
+
+
 /********************************
  ** Platform_env::Local_parent **
  ********************************/

@@ -226,6 +226,11 @@ namespace Genode {
 					 */
 					bool _dataspace_writable(Capability<Dataspace>);
 
+					/**
+					 * Release the dataspace.
+					 */
+					void _release_dataspace(Capability<Dataspace>);
+
 				public:
 
 					Rm_session_mmap(bool sub_rm, size_t size = ~0)

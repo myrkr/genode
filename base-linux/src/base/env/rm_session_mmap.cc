@@ -55,7 +55,7 @@ Platform_env_base::Rm_session_mmap::_map_local(Dataspace_capability ds,
 	 * won't need to keep track of dataspace file descriptors within the
 	 * process.
 	 */
-	lx_close(fd);
+	_release_dataspace(ds);
 
 	if (((long)addr_out < 0) && ((long)addr_out > -4095)) {
 		PERR("_map_local: return value of mmap is %ld", (long)addr_out);

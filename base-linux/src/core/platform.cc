@@ -236,3 +236,10 @@ bool Platform_env_base::Rm_session_mmap::_dataspace_writable(Dataspace_capabilit
 
 	return ds ? ds->writable() : false;
 }
+
+
+void
+Platform_env_base::Rm_session_mmap::_release_dataspace(Dataspace_capability)
+{
+	/* do not close the fd within core */
+}
